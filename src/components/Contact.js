@@ -1,22 +1,24 @@
 import React from 'react';
 import './Contact.css';
 
+/*
 const name = 'Harper Rice';
 const avatar = 'https://randomuser.me/api/portraits/women/83.jpg';
 const online = true;
+*/
 
-const Contact = () => (
+const Contact = (props) => (
   <div className='Contact'>
-    <img className='avatar' src={avatar} alt={name} />
+    <img className='avatar' src={props.avatar} alt={props.name} />
 
     <div>
       <div className='name'>
-        {name}
+        {props.name}
       </div>
       <div className='status'>
-        <span className='status-online'></span>
+        <span className={props.online ? 'status-online' : 'status-offline'} />
         <div className='status-text'>
-          {(online) ? 'online' : 'offline'}
+          {(props.online) ? 'online' : 'offline'}
         </div>
       </div>
     </div>
